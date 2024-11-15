@@ -21,12 +21,17 @@ public class Carrusel extends Atraccion {
 
     // otros metodos
     @Override
-    public void iniciarAtraccion(String tiempo_actual, String condiciones_climaticas) {
-        System.out.println("Iniciando Carrusel con " + numeroDeCaballos + " caballos");
+    public void iniciar() {
+        System.out.println("Carrusel iniciad0 con adrenalina alta.");
     }
 
     @Override
-    public float calcularIngresos(int visitantes_totales, float descuento) {
-        return super.calcularIngresos(visitantes_totales, descuento) + (visitantes_totales * 2);
+    public void detener() {
+        System.out.println("Carrusel detenido.");
+    }
+
+    @Override
+    public void realizarMantenimiento() {
+        System.out.println("Mantenimiento de Carrusel en progreso.");
     }
 }

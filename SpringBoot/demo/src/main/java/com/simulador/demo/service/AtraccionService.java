@@ -37,4 +37,25 @@ public class AtraccionService {
     public void deleteAtraccion(int id) {
         atracciones.removeIf(atraccion -> atraccion.getId() == id);
     }
+
+    public void iniciarAtraccion(int id) {
+        Atraccion atraccion = getAtraccionById(id);
+        if (atraccion != null) {
+            atraccion.iniciar();
+        }
+    }
+
+    public void detenerAtraccion(int id) {
+        Atraccion atraccion = getAtraccionById(id);
+        if (atraccion != null) {
+            atraccion.detener();
+        }
+    }
+
+    public void realizarMantenimientoAtraccion(int id) {
+        Atraccion atraccion = getAtraccionById(id);
+        if (atraccion != null) {
+            atraccion.realizarMantenimiento();
+        }
+    }
 }

@@ -43,7 +43,7 @@ public class Entrada {
     // otros metodos
     public boolean validarEntrada() {
 
-        return true; // Lógica de validación simplificada
+        return true;
     }
 
     public void aplicarDescuento(float porcentaje) {

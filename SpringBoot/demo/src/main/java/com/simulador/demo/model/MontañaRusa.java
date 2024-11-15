@@ -33,12 +33,17 @@ public class MontañaRusa extends Atraccion {
 
     // otros metodos
     @Override
-    public void iniciarAtraccion(String tiempo_actual, String condiciones_climaticas) {
-        System.out.println("Iniciando Montaña Rusa a las " + tiempo_actual + " con velocidad máxima de: " + velocidadMaxima + " km/h");
+    public void iniciar() {
+        System.out.println("Montaña Rusa iniciada con adrenalina alta.");
     }
 
     @Override
-    public float calcularIngresos(int visitantes_totales, float descuento) {
-        return super.calcularIngresos(visitantes_totales, descuento) + (visitantes_totales * 5); // Ingresos adicionales
+    public void detener() {
+        System.out.println("Montaña Rusa detenida.");
+    }
+
+    @Override
+    public void realizarMantenimiento() {
+        System.out.println("Mantenimiento de Montaña Rusa en progreso.");
     }
 }

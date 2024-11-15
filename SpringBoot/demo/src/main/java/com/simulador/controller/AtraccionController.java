@@ -42,4 +42,19 @@ public class AtraccionController {
         atraccionService.deleteAtraccion(id);
         return ResponseEntity.noContent().build();
     }
+
+    @PostMapping("/{id}/iniciar")
+    public void iniciarAtraccion(@PathVariable int id) {
+        atraccionService.iniciarAtraccion(id);
+    }
+
+    @PostMapping("/{id}/detener")
+    public void detenerAtraccion(@PathVariable int id) {
+        atraccionService.detenerAtraccion(id);
+    }
+
+    @PostMapping("/{id}/mantenimiento")
+    public void realizarMantenimiento(@PathVariable int id) {
+        atraccionService.realizarMantenimientoAtraccion(id);
+    }
 }

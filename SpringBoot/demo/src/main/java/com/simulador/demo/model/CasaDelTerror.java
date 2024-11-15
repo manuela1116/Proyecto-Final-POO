@@ -21,12 +21,17 @@ public class CasaDelTerror extends Atraccion {
 
     // otros metodos
     @Override
-    public void iniciarAtraccion(String tiempo_actual, String condiciones_climaticas) {
-        System.out.println("Iniciando Casa del Terror con nivel de miedo: " + nivelDeMiedo);
+    public void iniciar() {
+        System.out.println("Casa del Terror iniciada con adrenalina alta.");
     }
 
     @Override
-    public float calcularIngresos(int visitantes_totales, float descuento) {
-        return super.calcularIngresos(visitantes_totales, descuento) + (visitantes_totales * nivelDeMiedo);
+    public void detener() {
+        System.out.println("Casa del Terror detenida.");
+    }
+
+    @Override
+    public void realizarMantenimiento() {
+        System.out.println("Mantenimiento de Casa del Terror en progreso.");
     }
 }

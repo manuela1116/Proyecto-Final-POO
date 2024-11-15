@@ -1,7 +1,8 @@
 package com.simulador.demo.model;
+import com.simulador.interfaces.VisitanteInteractivo;
 
 
-public class Visitante {
+public class Visitante implements VisitanteInteractivo {
     private static int idCounter = 0;
     private int id;
     private String nombre;
@@ -51,21 +52,18 @@ public class Visitante {
     }
 
     // otros metodos
-    public void comprarEntrada(Entrada entrada) {
-        if (this.dinero >= entrada.getPrecio()) {
-            this.dinero -= entrada.getPrecio();
-            System.out.println(nombre + " ha comprado una entrada de tipo " + entrada.getTipo());
-        } else {
-            System.out.println(nombre + " no tiene suficiente dinero para comprar la entrada.");
-        }
+    @Override
+    public void ingresarParque() {
+        System.out.println(nombre + " ha ingresado al parque.");
     }
 
-    public void montarAtraccion(Atraccion atraccion) {
-        System.out.println(nombre + " está montando en " + atraccion.getNombre());
+    @Override
+    public void salirParque() {
+        System.out.println(nombre + " ha salido del parque.");
     }
 
-    public void gastarDinero(float monto) {
-
-        this.dinero -= monto;
+    @Override
+    public void comprarEntrada() {
+        System.out.println(nombre + " ha comprado una entrada.");
     }
 }

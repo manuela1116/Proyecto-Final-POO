@@ -1,7 +1,6 @@
 package com.simulador.controller;
 
 import com.simulador.demo.model.Adulto;
-import com.simulador.demo.model.Niño;
 import com.simulador.demo.service.AdultoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

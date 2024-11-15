@@ -1,8 +1,9 @@
 package com.simulador.demo.model;
+import com.simulador.interfaces.Operable;
 
 import java.util.List;
 
-public class Atraccion {
+public class Atraccion implements Operable {
     private static int idCounter = 0;
     private int id;
     private String nombre;
@@ -75,11 +76,18 @@ public class Atraccion {
     }
 
     // Otros metodos
-    public void iniciarAtraccion(String tiempo_actual, String condiciones_climaticas) {
-        System.out.println("Iniciando atracción " + this.nombre + " a las " + tiempo_actual + " con clima: " + condiciones_climaticas);
+    @Override
+    public void iniciar() {
+        System.out.println("Iniciando atracción: " + nombre);
     }
 
-    public float calcularIngresos(int visitantes_totales, float descuento) {
-        return visitantes_totales * (costoMantenimiento - descuento);
+    @Override
+    public void detener() {
+        System.out.println("Deteniendo atracción: " + nombre);
+    }
+
+    @Override
+    public void realizarMantenimiento() {
+        System.out.println("Realizando mantenimiento a la atracción: " + nombre);
     }
 }

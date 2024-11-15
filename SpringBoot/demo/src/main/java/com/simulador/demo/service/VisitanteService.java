@@ -36,4 +36,23 @@ public class VisitanteService {
     public void deleteVisitante(int id) {
         visitantes.removeIf(visitante -> visitante.getId() == id);
     }
+
+    public void realizarAccion(int id, String accion) {
+        Visitante visitante = visitantes.stream().filter(v -> v.getId() == id).findFirst().orElse(null);
+        if (visitante != null) {
+            switch (accion) {
+                case "ingresar":
+                    visitante.ingresarParque();
+                    break;
+                case "salir":
+                    visitante.salirParque();
+                    break;
+                case "comprar":
+                    visitante.comprarEntrada();
+                    break;
+                default:
+                    System.out.println("Acción no válida");
+            }
+        }
+    }
 }

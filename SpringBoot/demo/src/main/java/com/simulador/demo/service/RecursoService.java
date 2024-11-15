@@ -20,7 +20,7 @@ public class RecursoService {
     }
 
     public Recurso addRecurso(Recurso recurso) {
-        recurso.setId(recursos.size() + 1); // Generar un ID simple
+        recurso.setId(recursos.size() + 1);
         recursos.add(recurso);
         return recurso;
     }
